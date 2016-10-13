@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		BF1512E71DAEF9E000C39871 /* QuarkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF1512E51DAEF9E000C39871 /* QuarkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BF15132F1DAF135F00C39871 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15132E1DAF135F00C39871 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		BF1512E21DAEF9E000C39871 /* QuarkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuarkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1512E51DAEF9E000C39871 /* QuarkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarkCore.h; sourceTree = "<group>"; };
 		BF1512E61DAEF9E000C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF15132E1DAF135F00C39871 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				BF1512E51DAEF9E000C39871 /* QuarkCore.h */,
+				BF15132E1DAF135F00C39871 /* Logger.swift */,
 				BF1512E61DAEF9E000C39871 /* Info.plist */,
 			);
 			path = QuarkCore;
@@ -95,6 +98,7 @@
 				TargetAttributes = {
 					BF1512E11DAEF9E000C39871 = {
 						CreatedOnToolsVersion = 8.1;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -131,6 +135,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF15132F1DAF135F00C39871 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -236,6 +241,7 @@
 		BF1512EB1DAEF9E000C39871 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
@@ -249,6 +255,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.Vesto.QuarkCore;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -256,6 +263,7 @@
 		BF1512EC1DAEF9E000C39871 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEFINES_MODULE = YES;
