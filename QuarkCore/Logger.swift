@@ -15,12 +15,12 @@ public protocol LoggerExport: JSExport {
      
      - parameter text: The text to print to the console.
      */
-    static func print(_ text: String)
+    static func output(_ string: String)
 }
 
 @objc
 public class Logger: NSObject, LoggerExport {
-    public static func print(_ text: String) {
-        Swift.print(text, terminator: "")
+    public static func output(_ string: String) {
+        Swift.print(string, terminator: "")
     }
 }
