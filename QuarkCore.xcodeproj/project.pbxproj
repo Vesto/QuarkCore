@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		BF1512E71DAEF9E000C39871 /* QuarkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF1512E51DAEF9E000C39871 /* QuarkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF15132F1DAF135F00C39871 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15132E1DAF135F00C39871 /* Logger.swift */; };
+		BF7C36DB1DDD5DB500C1DB00 /* Quark Library in Resources */ = {isa = PBXBuildFile; fileRef = BF7C36DA1DDD5DB500C1DB00 /* Quark Library */; };
+		BF7C36DD1DDD5E4C00C1DB00 /* QuarkLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */; };
+		BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DE1DDD67C500C1DB00 /* QKError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +19,9 @@
 		BF1512E51DAEF9E000C39871 /* QuarkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarkCore.h; sourceTree = "<group>"; };
 		BF1512E61DAEF9E000C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF15132E1DAF135F00C39871 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BF7C36DA1DDD5DB500C1DB00 /* Quark Library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Quark Library"; path = "../../Quark Library"; sourceTree = SOURCE_ROOT; };
+		BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarkLibrary.swift; sourceTree = "<group>"; };
+		BF7C36DE1DDD67C500C1DB00 /* QKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +55,10 @@
 			isa = PBXGroup;
 			children = (
 				BF1512E51DAEF9E000C39871 /* QuarkCore.h */,
+				BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */,
+				BF7C36DE1DDD67C500C1DB00 /* QKError.swift */,
 				BF15132E1DAF135F00C39871 /* Logger.swift */,
+				BF7C36DA1DDD5DB500C1DB00 /* Quark Library */,
 				BF1512E61DAEF9E000C39871 /* Info.plist */,
 			);
 			path = QuarkCore;
@@ -125,6 +134,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7C36DB1DDD5DB500C1DB00 /* Quark Library in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,6 +145,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF7C36DD1DDD5E4C00C1DB00 /* QuarkLibrary.swift in Sources */,
+				BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */,
 				BF15132F1DAF135F00C39871 /* Logger.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -300,6 +312,7 @@
 				BF1512EC1DAEF9E000C39871 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
