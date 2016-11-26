@@ -12,6 +12,7 @@
 		BF7C36DB1DDD5DB500C1DB00 /* Quark Library in Resources */ = {isa = PBXBuildFile; fileRef = BF7C36DA1DDD5DB500C1DB00 /* Quark Library */; };
 		BF7C36DD1DDD5E4C00C1DB00 /* QuarkLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */; };
 		BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DE1DDD67C500C1DB00 /* QKError.swift */; };
+		BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		BF7C36DA1DDD5DB500C1DB00 /* Quark Library */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "Quark Library"; path = "../../Quark Library"; sourceTree = SOURCE_ROOT; };
 		BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuarkLibrary.swift; sourceTree = "<group>"; };
 		BF7C36DE1DDD67C500C1DB00 /* QKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKError.swift; sourceTree = "<group>"; };
+		BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Swizzle.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				BF1512E51DAEF9E000C39871 /* QuarkCore.h */,
 				BF7C36DC1DDD5E4C00C1DB00 /* QuarkLibrary.swift */,
+				BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */,
 				BF7C36DE1DDD67C500C1DB00 /* QKError.swift */,
 				BF15132E1DAF135F00C39871 /* Logger.swift */,
 				BF7C36DA1DDD5DB500C1DB00 /* Quark Library */,
@@ -145,6 +148,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */,
 				BF7C36DD1DDD5E4C00C1DB00 /* QuarkLibrary.swift in Sources */,
 				BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */,
 				BF15132F1DAF135F00C39871 /* Logger.swift in Sources */,
