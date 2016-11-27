@@ -184,9 +184,6 @@ public class QKModule {
     
     /// Loads a resource of a specified name and type
     public func loadResource(named: String, withExtension: String) {
-        // TODO: Load the resource
+        // TODO: Load and return the resource
     }
 }
-
-
-

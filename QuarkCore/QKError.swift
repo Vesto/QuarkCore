@@ -10,4 +10,5 @@ import Foundation
 
 public enum QKError: Error {
     case invalidViewType(type: AnyClass)
+    case unableToCreateViewController
 }
