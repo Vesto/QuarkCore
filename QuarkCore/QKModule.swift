@@ -1,5 +1,5 @@
 //
-//  QuarkModule.swift
+//  QKModule.swift
 //  QuarkCore
 //
 //  Created by Nathan Flurry on 11/26/16.
@@ -22,8 +22,6 @@ import JavaScriptCore
  info.json
 */
 
-// TODO: rename to QK...
-
 public enum QKModuleError: Error {
     case invalidInfo
     case noInfo
@@ -31,7 +29,7 @@ public enum QKModuleError: Error {
     case unableToIndexResources
 }
 
-public class QuarkModuleInfo {
+public class QKModuleInfo {
     public let name: String
     public let version: String
     public let appDelegate: String
@@ -58,7 +56,7 @@ public class QuarkModuleInfo {
     }
 }
 
-public class QuarkResource {
+public class QKResource {
     // Data
     public let url: URL
     public let name: String
@@ -76,8 +74,8 @@ public class QuarkResource {
     }
 }
 
-public class QuarkModule {
-    // Paths
+public class QKModule {
+    // Component paths
     private static let infoPath = "info.json"
     private static let buildPath = "dist/build.js"
     private static let resourcePath = "resources/"
@@ -87,27 +85,27 @@ public class QuarkModule {
     
     /// The URL for the info file.
     public var infoURL: URL {
-        return url.appendingPathComponent(QuarkModule.infoPath, isDirectory: false)
+        return url.appendingPathComponent(QKModule.infoPath, isDirectory: false)
     }
     
     /// The URL for the build source.
     public var buildURL: URL {
-        return url.appendingPathComponent(QuarkModule.buildPath, isDirectory: false)
+        return url.appendingPathComponent(QKModule.buildPath, isDirectory: false)
     }
     
     /// The URL for the resource folder.
     public var resourceURL: URL {
-        return url.appendingPathComponent(QuarkModule.resourcePath, isDirectory: true)
+        return url.appendingPathComponent(QKModule.resourcePath, isDirectory: true)
     }
     
     /// The info data for the module.
-    public private(set) var info: QuarkModuleInfo?
+    public private(set) var info: QKModuleInfo?
     
     /// The source for the module
     public private(set) var source: String?
     
     /// A list of all the resources in the module.
-    public private(set) var resources: [QuarkResource]?
+    public private(set) var resources: [QKResource]?
     
     /// Loads a module at a specified URL.
     public init(url: URL) throws {
@@ -127,7 +125,7 @@ public class QuarkModule {
     /// (Re)loads the info file for the module.
     public func loadInfo() throws {
         // Load the info file
-        self.info = try QuarkModuleInfo(url: infoURL)
+        self.info = try QKModuleInfo(url: infoURL)
     }
     
     /// (Re)loads the module's source.
@@ -154,7 +152,7 @@ public class QuarkModule {
         }
         
         // An index of all the resources
-        var index = [QuarkResource]()
+        var index = [QKResource]()
         
         // Loop through the enumerator
         for case let url as URL in enumerator {
@@ -170,7 +168,7 @@ public class QuarkModule {
             let fileName = url.lastPathComponent
             
             // Save the resource
-            index.append(QuarkResource(url: url, name: fileName, type: type))
+            index.append(QKResource(url: url, name: fileName, type: type))
         }
     }
     
