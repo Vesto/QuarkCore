@@ -21,6 +21,7 @@ public protocol LoggerExport: JSExport {
 @objc
 public class Logger: NSObject, LoggerExport {
     public static func output(_ string: String) {
+        // Prints witout a new line break
         Swift.print(string, terminator: "")
     }
 }
