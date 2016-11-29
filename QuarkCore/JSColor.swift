@@ -1,0 +1,49 @@
+//
+//  JSColor.swift
+//  QuarkExports
+//
+//  Created by Nathan Flurry on 11/25/16.
+//  Copyright © 2016 Vesto. All rights reserved.
+//
+
+import JavaScriptCore
+
+public class JSColor: JSAdapter {
+    public static var jsClass: String = "Color"
+    
+    public let value: JSValue
+    
+    public var red: Double {
+        return value.objectForKeyedSubscript("red").toDouble()
+    }
+    
+    public var green: Double {
+        return value.objectForKeyedSubscript("green").toDouble()
+    }
+    
+    public var blue: Double {
+        return value.objectForKeyedSubscript("blue").toDouble()
+    }
+    
+    public var alpha: Double {
+        return value.objectForKeyedSubscript("alpha").toDouble()
+    }
+    
+    public required init?(value: JSValue) {
+        guard value.isInstance(of: JSColor.viewClass(context: value.context)) else {
+            Swift.print("Could not convert JSValue \(value) to JSColor.")
+            return nil
+        }
+        
+        self.value = value
+    }
+    
+    public required convenience init?(context: JSContext, red: Double, green: Double, blue: Double, alpha: Double) {
+        guard let value = JSSize.viewClass(context: context).construct(withArguments: [red, green, blue, alpha]) else {
+            print("Could not construct \(JSView.jsClass) with arguments \(red), \(green), \(blue), \(alpha).")
+            return nil
+        }
+        
+        self.init(value: value)
+    }
+}
