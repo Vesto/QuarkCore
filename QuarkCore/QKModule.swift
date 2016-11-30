@@ -32,7 +32,9 @@ public enum QKModuleError: Error {
 public class QKModuleInfo {
     public let name: String
     public let version: String
-    public let appDelegate: String
+    public let delegate: String
+    public let build: String
+    public let resources: String
     
     convenience init(url: URL) throws {
         try self.init(data: try Data(contentsOf: url))
@@ -44,7 +46,9 @@ public class QKModuleInfo {
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
             let name = json["name"] as? String,
             let version = json["version"] as? String,
-            let appDelegate = json["app-delegate"] as? String
+            let delegate = json["delegate"] as? String,
+            let build = json["build"] as? String,
+            let resources = json["resources"] as? String
         else {
             throw QKModuleError.invalidInfo
         }
@@ -52,7 +56,9 @@ public class QKModuleInfo {
         // Save the parameters
         self.name = name
         self.version = version
-        self.appDelegate = appDelegate
+        self.delegate = delegate
+        self.build = build
+        self.resources = resources
     }
 }
 
@@ -77,8 +83,6 @@ public class QKResource {
 public class QKModule {
     // Component paths
     private static let infoPath = "info.json"
-    private static let buildPath = "dist/build.js"
-    private static let resourcePath = "resources/"
     
     /// The base URL for the module
     public private(set) var url: URL
@@ -90,22 +94,22 @@ public class QKModule {
     
     /// The URL for the build source.
     public var buildURL: URL {
-        return url.appendingPathComponent(QKModule.buildPath, isDirectory: false)
+        return url.appendingPathComponent(info.build, isDirectory: false)
     }
     
     /// The URL for the resource folder.
     public var resourceURL: URL {
-        return url.appendingPathComponent(QKModule.resourcePath, isDirectory: true)
+        return url.appendingPathComponent(info.resources, isDirectory: true)
     }
     
     /// The info data for the module.
-    public private(set) var info: QKModuleInfo?
+    public private(set) var info: QKModuleInfo!
     
     /// The source for the module
-    public private(set) var source: String?
+    public private(set) var source: String!
     
     /// A list of all the resources in the module.
-    public private(set) var resources: [QKResource]?
+    public private(set) var resources: [QKResource]!
     
     /// Loads a module at a specified URL.
     public init(url: URL) throws {
