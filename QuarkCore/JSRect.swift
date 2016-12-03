@@ -22,15 +22,11 @@ public class JSRect: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSRect.viewClass(context: value.context)) else {
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, point: JSPoint, size: JSSize) {
-        guard let value = JSRect.viewClass(context: context).construct(withArguments: [point.value, size.value]) else {
+    public required convenience init?(instance: QKInstance, point: JSPoint, size: JSSize) {
+        guard let value = JSRect.viewClass(instance: instance).construct(withArguments: [point.value, size.value]) else {
             return nil
         }
         

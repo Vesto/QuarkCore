@@ -22,15 +22,11 @@ public class JSPoint: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSPoint.viewClass(context: value.context)) else {
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, x: Double, y: Double) {
-        guard let value = JSPoint.viewClass(context: context).construct(withArguments: [x, y]) else {
+    public required convenience init?(instance: QKInstance, x: Double, y: Double) {
+        guard let value = JSPoint.viewClass(instance: instance).construct(withArguments: [x, y]) else {
             return nil
         }
         

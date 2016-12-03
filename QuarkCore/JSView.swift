@@ -18,16 +18,11 @@ public class JSView: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSView.viewClass(context: value.context)) else {
-            Swift.print("Could not convert JSValue \(value) to JSView.")
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, view: View) {
-        guard let value = JSView.viewClass(context: context).construct(withArguments: [view]) else {
+    public required convenience init?(instance: QKInstance, view: View) {
+        guard let value = JSView.viewClass(instance: instance).construct(withArguments: [view]) else {
             print("Could not construct \(JSView.jsClass) with arguments \(view).")
             return nil
         }
@@ -47,7 +42,7 @@ public class JSView: JSAdapter {
         }
     }
     
-    public static func jsView(context: JSContext, view: View) -> JSView? {
-        return JSView.adapterClassForView(type: type(of: view)).init(context: context, view: view)
+    public static func jsView(instance: QKInstance, view: View) -> JSView? {
+        return JSView.adapterClassForView(type: type(of: view)).init(instance: instance, view: view)
     }
 }

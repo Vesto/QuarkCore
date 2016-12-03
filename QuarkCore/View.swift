@@ -19,7 +19,7 @@ import JavaScriptCore
  */
 
 @objc
-public protocol View: JSExport {
+public protocol View: JSExport, JSValueRetainer {
     /* JavaScript Interop */
     var jsView: JSValue? { get set } // TODO: Assure weak reference
     
@@ -57,21 +57,12 @@ public protocol View: JSExport {
     init()
 }
 
+// Implement method for `JSValueRetainer`.
 extension View {
-    public static func createJSView(context: JSContext) -> JSView? {
-        return JSView.jsView(context: context, view: Self())
+    /// Creates a `JSView` instance.
+    public static func createJSView(instance: QKInstance) -> JSView? {
+        // Should be `createJSValue`, but causes error. 
+        return JSView.jsView(instance: instance, view: Self())
     }
-    
-    public func readOrCreateJSView(context: JSContext, save: Bool = false) -> JSValue? {
-        if let jsView = jsView {
-            return jsView
-        } else if let jsView = Self.createJSView(context: context)?.value {
-            if save { // Save the view if needed
-                self.jsView = jsView
-            }
-            return jsView
-        } else {
-            return nil
-        }
-    }
+
 }

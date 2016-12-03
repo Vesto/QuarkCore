@@ -22,15 +22,11 @@ public class JSSize: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSSize.viewClass(context: value.context)) else {
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, width: Double, height: Double) {
-        guard let value = JSSize.viewClass(context: context).construct(withArguments: [width, height]) else {
+    public required convenience init?(instance: QKInstance, width: Double, height: Double) {
+        guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [width, height]) else {
             return nil
         }
         

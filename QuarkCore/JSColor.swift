@@ -30,16 +30,11 @@ public class JSColor: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSColor.viewClass(context: value.context)) else {
-            Swift.print("Could not convert JSValue \(value) to JSColor.")
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, red: Double, green: Double, blue: Double, alpha: Double) {
-        guard let value = JSSize.viewClass(context: context).construct(withArguments: [red, green, blue, alpha]) else {
+    public required convenience init?(instance: QKInstance, red: Double, green: Double, blue: Double, alpha: Double) {
+        guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [red, green, blue, alpha]) else {
             print("Could not construct \(JSView.jsClass) with arguments \(red), \(green), \(blue), \(alpha).")
             return nil
         }

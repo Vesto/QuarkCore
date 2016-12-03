@@ -32,6 +32,7 @@ public enum QKModuleError: Error {
 public class QKModuleInfo {
     public let name: String
     public let version: String
+    public let module: String
     public let delegate: String
     public let build: String
     public let resources: String
@@ -46,6 +47,7 @@ public class QKModuleInfo {
             let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: AnyObject],
             let name = json["name"] as? String,
             let version = json["version"] as? String,
+            let module = json["module"] as? String,
             let delegate = json["delegate"] as? String,
             let build = json["build"] as? String,
             let resources = json["resources"] as? String
@@ -56,9 +58,14 @@ public class QKModuleInfo {
         // Save the parameters
         self.name = name
         self.version = version
+        self.module = module
         self.delegate = delegate
         self.build = build
         self.resources = resources
+    }
+    
+    public func key(named: String) -> String {
+        return "\(module).\(named)"
     }
 }
 
@@ -184,6 +191,11 @@ public class QKModule {
         
         // Evaluates the source into the context
         context.evaluateScript(source)
+    }
+    
+    /// Returns the module object.
+    public func module(in context: JSContext) -> JSValue {
+        return context.objectForKeyedSubscript(info.module)
     }
     
     /// Loads a resource of a specified name and type

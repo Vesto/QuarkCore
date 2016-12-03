@@ -10,13 +10,12 @@ import JavaScriptCore
 
 public protocol JSAdapter {
     static var jsClass: String { get }
-    static func viewClass(context: JSContext) -> JSValue
     var value: JSValue { get } // TODO: Weak reference somehow? Or should there be?
     init?(value: JSValue)
 }
 
 public extension JSAdapter {
-    static func viewClass(context: JSContext) -> JSValue {
-        return context.objectForKeyedSubscript(self.jsClass)
+    public static func viewClass(instance: QKInstance) -> JSValue { // TODO: Change this to QKInstance
+        return instance.quarkModule.objectForKeyedSubscript(Self.jsClass)
     }
 }

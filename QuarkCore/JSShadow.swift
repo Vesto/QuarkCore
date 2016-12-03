@@ -26,15 +26,11 @@ public class JSShadow: JSAdapter {
     }
     
     public required init?(value: JSValue) {
-        guard value.isInstance(of: JSShadow.viewClass(context: value.context)) else {
-            return nil
-        }
-        
         self.value = value
     }
     
-    public required convenience init?(context: JSContext, offset: JSPoint, blurRadius: Double, color: JSColor) {
-        guard let value = JSSize.viewClass(context: context).construct(withArguments: [offset.value, blurRadius, color.value]) else {
+    public required convenience init?(instance: QKInstance, offset: JSPoint, blurRadius: Double, color: JSColor) {
+        guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [offset.value, blurRadius, color.value]) else {
             return nil
         }
         
