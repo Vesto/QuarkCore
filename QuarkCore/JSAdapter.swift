@@ -16,6 +16,6 @@ public protocol JSAdapter {
 
 public extension JSAdapter {
     public static func viewClass(instance: QKInstance) -> JSValue { // TODO: Change this to QKInstance
-        return instance.quarkModule.objectForKeyedSubscript(Self.jsClass)
+        return instance.quarkLibrary.objectForKeyedSubscript(Self.jsClass)
     }
 }

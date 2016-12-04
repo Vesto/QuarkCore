@@ -100,7 +100,7 @@ public class QKModule {
     }
     
     /// The URL for the build source.
-    public var buildURL: URL {
+    public var sourceURL: URL {
         return url.appendingPathComponent(info.build, isDirectory: false)
     }
     
@@ -114,6 +114,9 @@ public class QKModule {
     
     /// The source for the module
     public private(set) var source: String!
+    
+    /// The source map for the module
+    public private(set) var sourceMap: String!
     
     /// A list of all the resources in the module.
     public private(set) var resources: [QKResource]!
@@ -141,7 +144,8 @@ public class QKModule {
     
     /// (Re)loads the module's source.
     public func loadSource() throws {
-        self.source = try String(contentsOf: buildURL)
+        self.source = try String(contentsOf: sourceURL)
+        self.sourceMap = try String(contentsOf: sourceURL.appendingPathExtension("map"))
     }
     
     /// Indexes the resources directory so files can be accessed quickly.

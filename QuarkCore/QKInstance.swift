@@ -26,7 +26,7 @@ public class QKInstance: NSObject {
     }
     
     /// The Quark library module.
-    public var quarkModule: JSValue {
+    public var quarkLibrary: JSValue {
         return context.objectForKeyedSubscript("quark")
     }
     
@@ -60,31 +60,25 @@ public class QKInstance: NSObject {
         // Save the URL
         self.module = module
         
-        // Add the exports to the context
-        for (key, object) in exports {
-            context.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
-        }
-        
-        // Import the quark library
-        if let quarkBundleURL = Bundle(for: QKInstance.self).url(forResource: "bundle", withExtension: "js") {
-            let quarkBundle = try String(contentsOf: quarkBundleURL)
-            context.evaluateScript(quarkBundle)
-        } else {
-            print("Could not import Quark library.")
-        }
-        
-        
-        // Import the program into the context
-        do {
-            try module.import(intoContext: context)
-        } catch {
-            print("Could not import module. \(error)")
-        }
-        
         super.init()
         
+        // Add the exports to the context
+//        for (key, object) in exports {
+//            context.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
+//        }
+        let exportsObject = JSValue(newObjectIn: context)! // TODO: Safety
+        for (key, object) in exports {
+            exportsObject.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
+        }
+        context.setObject(exportsObject, forKeyedSubscript: NSString(string: "quark-native"))
+        
+        // Import the program into the context
+        try module.import(intoContext: context)
+
         // Creates and saves an app delegate
         appDelegate = jsModule.objectForKeyedSubscript(module.info.delegate).construct(withArguments: [])
+
+        // TODO: Need to check that quark was loaded from the bundle before executing
     }
     
     required public init?(coder: NSCoder) {
@@ -98,8 +92,7 @@ public class QKInstance: NSObject {
      */
     public func start(window: Window) {
         if !running {
-            print(appDelegate.toDictionary())
-            // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delgate
+            // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delegate
             appDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])
             
             // Save the running state
