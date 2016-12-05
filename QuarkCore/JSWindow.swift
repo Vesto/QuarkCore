@@ -8,7 +8,8 @@
 
 import JavaScriptCore
 
-public class JSWindow: JSAdapter {
+@objc
+public class JSWindow: NSObject, JSAdapter {
     public static var jsClass: String = "Window"
     
     public let value: JSValue

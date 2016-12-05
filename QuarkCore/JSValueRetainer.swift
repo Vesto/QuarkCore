@@ -15,28 +15,20 @@ public protocol JSValueRetainer: class {
     static func createJSValue(instance: QKInstance) -> JSValue?
 }
 
+/// Associated value for storing `jsValue` objects. Has to be global since can't store values in extensions.
+var JSValueRetainerAssociatedKey = "JSAssociatedValue"
+
 extension JSValueRetainer {
-    /// The associated key for storing the `JSValue`.
-    private static var associatedKey: String {
-        get {
-            return "JSAssociatedValue"
-        }
-        set {
-            // Has set so it can be used in `inout`.
-            print("Tried to set \(newValue) as associated key.")
-        }
-    }
-    
     /// Override of `jsValue` to allow for storing the value.
     public var jsValue: JSValue? {
         get {
-            return objc_getAssociatedObject(self, &Self.associatedKey) as? JSValue
+            return objc_getAssociatedObject(self, &JSValueRetainerAssociatedKey) as? JSValue
         }
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
                     self,
-                    &Self.associatedKey,
+                    &JSValueRetainerAssociatedKey,
                     newValue,
                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC
                 )

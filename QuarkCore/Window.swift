@@ -8,6 +8,7 @@
 
 import JavaScriptCore
 
+@objc
 public protocol Window: JSExport {
     /* JavaScript Interop */
     var jsWindow: JSWindow! { get }

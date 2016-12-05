@@ -63,9 +63,6 @@ public class QKInstance: NSObject {
         super.init()
         
         // Add the exports to the context
-//        for (key, object) in exports {
-//            context.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
-//        }
         let exportsObject = JSValue(newObjectIn: context)! // TODO: Safety
         for (key, object) in exports {
             exportsObject.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
@@ -87,17 +84,19 @@ public class QKInstance: NSObject {
     
     // MARK: Methods
     /**
-     Starts the Quark instance, concequently showing the window and
+     Starts the Quark instance, consequently showing the window and
      executing the script.
      */
     public func start(window: Window) {
-        if !running {
-            // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delegate
-            appDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])
-            
-            // Save the running state
-            running = true
+        guard !running else {
+            return
         }
+
+        // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delegate
+        appDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])
+
+        // Save the running state
+        running = true
     }
 }
 

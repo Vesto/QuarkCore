@@ -8,6 +8,7 @@
 
 import JavaScriptCore
 
+@objc
 public protocol JSAdapter {
     static var jsClass: String { get }
     var value: JSValue { get } // TODO: Weak reference somehow? Or should there be?
