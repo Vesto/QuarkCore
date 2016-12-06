@@ -61,6 +61,9 @@ public class QKInstance: NSObject {
         self.module = module
         
         super.init()
+
+        // Assign the instance to the context
+        context.instance = self
         
         // Add the exports to the context
         let exportsObject = JSValue(newObjectIn: context)! // TODO: Safety
