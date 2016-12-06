@@ -163,7 +163,6 @@ public class QKModule {
             )
         else {
             throw QKModuleError.unableToIndexResources
-            return
         }
         
         // An index of all the resources
@@ -190,7 +189,6 @@ public class QKModule {
     /// Executes the source in a context.
     public func `import`(intoContext context: JSContext) throws {
         // Make sure that the appropriate data is loaded
-        guard let info = info else { throw QKModuleError.noInfo }
         guard let source = source else { throw QKModuleError.noSource }
         
         // Evaluates the source into the context

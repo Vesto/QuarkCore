@@ -22,7 +22,8 @@ public class QKSourceMap {
     public func originalPositionFor(line: Int, column: Int) throws -> (Int, Int) {
         // Get the mapped values
         let mapped = value.invokeMethod("originalPositionFor", withArguments: [line, column])
-        print(mapped?.toDictionary())
+        print(mapped?.toDictionary() ?? "Could not unwrap.")
+
         // Fetch the values
         guard
             let line = mapped?.objectForKeyedSubscript("line").toInt32(),
