@@ -71,7 +71,7 @@ public class QKInstance: NSObject {
             exportsObject.setObject(object, forKeyedSubscript: NSString(string: exportsPrefix + key))
         }
         context.setObject(exportsObject, forKeyedSubscript: NSString(string: "quark-native"))
-        
+
         // Import the program into the context
         try module.import(intoContext: context)
 
