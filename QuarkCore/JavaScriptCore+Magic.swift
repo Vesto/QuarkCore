@@ -8,19 +8,20 @@
 
 import JavaScriptCore
 
-/// Associated value for storing `instance` on JSContext objects.
-var JSContextInstanceAssociatedKey = "JSContextInstance"
-
 extension JSContext {
+    fileprivate struct AssociatedKeys {
+        static var Instance = "JSContextInstance"
+    }
+
     public internal(set) var instance: QKInstance? {
         get {
-            return objc_getAssociatedObject(self, &JSContextInstanceAssociatedKey) as? QKInstance
+            return objc_getAssociatedObject(self, &AssociatedKeys.Instance) as? QKInstance
         }
         set {
             if let newValue = newValue {
                 objc_setAssociatedObject(
                         self,
-                        &JSContextInstanceAssociatedKey,
+                        &AssociatedKeys.Instance,
                         newValue,
                         .OBJC_ASSOCIATION_RETAIN_NONATOMIC
                 )
