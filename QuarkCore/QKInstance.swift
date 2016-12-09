@@ -36,6 +36,9 @@ public class QKInstance: NSObject {
     /// The context in which the main script runs in
     public let context: JSContext
     
+    /// The window the instnace runs in.
+    public private(set) var window: Window?
+    
     /// Wether or not Quark is running
     public private(set) var running: Bool = false
     
@@ -94,6 +97,9 @@ public class QKInstance: NSObject {
         guard !running else {
             return
         }
+        
+        // Set the window
+        self.window = window
 
         // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delegate
         appDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])

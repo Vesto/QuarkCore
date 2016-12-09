@@ -11,7 +11,6 @@
 		BF1512E71DAEF9E000C39871 /* QuarkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF1512E51DAEF9E000C39871 /* QuarkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BF15132F1DAF135F00C39871 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15132E1DAF135F00C39871 /* Logger.swift */; };
 		BF39D1511DEE19A5003B405C /* JSAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14A1DEE19A5003B405C /* JSAdapter.swift */; };
-		BF39D1521DEE19A5003B405C /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14B1DEE19A5003B405C /* JSView.swift */; };
 		BF39D1531DEE19A5003B405C /* JSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14C1DEE19A5003B405C /* JSRect.swift */; };
 		BF39D1541DEE19A5003B405C /* JSPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14D1DEE19A5003B405C /* JSPoint.swift */; };
 		BF39D1551DEE19A5003B405C /* JSSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14E1DEE19A5003B405C /* JSSize.swift */; };
@@ -19,6 +18,9 @@
 		BF39D1571DEE19A5003B405C /* JSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D1501DEE19A5003B405C /* JSShadow.swift */; };
 		BF39D15B1DEE19C5003B405C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D1591DEE19C5003B405C /* View.swift */; };
 		BF39D15C1DEE19C5003B405C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D15A1DEE19C5003B405C /* Button.swift */; };
+		BF4A190B1DF9CAC700750682 /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A19091DF9CAC700750682 /* JSView.swift */; };
+		BF4A190C1DF9CAC700750682 /* JSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A190A1DF9CAC700750682 /* JSWindow.swift */; };
+		BF4A190E1DF9CAF400750682 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A190D1DF9CAF400750682 /* Events.swift */; };
 		BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DE1DDD67C500C1DB00 /* QKError.swift */; };
 		BFDB002F1DEF66B900E63AD5 /* JavaScriptCore+Magic.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB002E1DEF66B900E63AD5 /* JavaScriptCore+Magic.swift */; };
 		BFDB4C3C1DF3A8CC0027CBF7 /* QKJSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB4C3B1DF3A8CC0027CBF7 /* QKJSUtils.swift */; };
@@ -28,7 +30,6 @@
 		BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */; };
 		BFF124EE1DEA62730023661D /* QKModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124ED1DEA62730023661D /* QKModule.swift */; };
 		BFFEB4311DEF9FF400846A18 /* QKInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFEB4301DEF9FF400846A18 /* QKInstance.swift */; };
-		BFFEB4331DEFA11500846A18 /* JSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFEB4321DEFA11500846A18 /* JSWindow.swift */; };
 		BFFEB4391DEFA3BD00846A18 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFEB4381DEFA3BD00846A18 /* Window.swift */; };
 		BFFEB43B1DEFAADA00846A18 /* JSValueRetainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFEB43A1DEFAADA00846A18 /* JSValueRetainer.swift */; };
 /* End PBXBuildFile section */
@@ -40,7 +41,6 @@
 		BF1512E61DAEF9E000C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF15132E1DAF135F00C39871 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		BF39D14A1DEE19A5003B405C /* JSAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSAdapter.swift; sourceTree = "<group>"; };
-		BF39D14B1DEE19A5003B405C /* JSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
 		BF39D14C1DEE19A5003B405C /* JSRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSRect.swift; sourceTree = "<group>"; };
 		BF39D14D1DEE19A5003B405C /* JSPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSPoint.swift; sourceTree = "<group>"; };
 		BF39D14E1DEE19A5003B405C /* JSSize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSize.swift; sourceTree = "<group>"; };
@@ -48,6 +48,9 @@
 		BF39D1501DEE19A5003B405C /* JSShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSShadow.swift; sourceTree = "<group>"; };
 		BF39D1591DEE19C5003B405C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BF39D15A1DEE19C5003B405C /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
+		BF4A19091DF9CAC700750682 /* JSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
+		BF4A190A1DF9CAC700750682 /* JSWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSWindow.swift; sourceTree = "<group>"; };
+		BF4A190D1DF9CAF400750682 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BF7C36DE1DDD67C500C1DB00 /* QKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKError.swift; sourceTree = "<group>"; };
 		BFDB002E1DEF66B900E63AD5 /* JavaScriptCore+Magic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "JavaScriptCore+Magic.swift"; sourceTree = "<group>"; };
 		BFDB4C3B1DF3A8CC0027CBF7 /* QKJSUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKJSUtils.swift; sourceTree = "<group>"; };
@@ -57,7 +60,6 @@
 		BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Swizzle.swift"; sourceTree = "<group>"; };
 		BFF124ED1DEA62730023661D /* QKModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKModule.swift; sourceTree = "<group>"; };
 		BFFEB4301DEF9FF400846A18 /* QKInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKInstance.swift; sourceTree = "<group>"; };
-		BFFEB4321DEFA11500846A18 /* JSWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSWindow.swift; sourceTree = "<group>"; };
 		BFFEB4381DEFA3BD00846A18 /* Window.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
 		BFFEB43A1DEFAADA00846A18 /* JSValueRetainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSValueRetainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,13 +109,8 @@
 			isa = PBXGroup;
 			children = (
 				BF39D14A1DEE19A5003B405C /* JSAdapter.swift */,
-				BF39D14B1DEE19A5003B405C /* JSView.swift */,
-				BF39D14C1DEE19A5003B405C /* JSRect.swift */,
-				BF39D14D1DEE19A5003B405C /* JSPoint.swift */,
-				BF39D14E1DEE19A5003B405C /* JSSize.swift */,
-				BF39D14F1DEE19A5003B405C /* JSColor.swift */,
-				BF39D1501DEE19A5003B405C /* JSShadow.swift */,
-				BFFEB4321DEFA11500846A18 /* JSWindow.swift */,
+				BF4A19081DF9CA8D00750682 /* Types */,
+				BF4A19061DF9CA6D00750682 /* UI */,
 			);
 			name = Adapters;
 			sourceTree = "<group>";
@@ -125,6 +122,28 @@
 				BFFEB4381DEFA3BD00846A18 /* Window.swift */,
 			);
 			name = UI;
+			sourceTree = "<group>";
+		};
+		BF4A19061DF9CA6D00750682 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				BF4A190D1DF9CAF400750682 /* Events.swift */,
+				BF4A19091DF9CAC700750682 /* JSView.swift */,
+				BF4A190A1DF9CAC700750682 /* JSWindow.swift */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		BF4A19081DF9CA8D00750682 /* Types */ = {
+			isa = PBXGroup;
+			children = (
+				BF39D14C1DEE19A5003B405C /* JSRect.swift */,
+				BF39D14D1DEE19A5003B405C /* JSPoint.swift */,
+				BF39D14E1DEE19A5003B405C /* JSSize.swift */,
+				BF39D14F1DEE19A5003B405C /* JSColor.swift */,
+				BF39D1501DEE19A5003B405C /* JSShadow.swift */,
+			);
+			name = Types;
 			sourceTree = "<group>";
 		};
 		BFDB4C3A1DF3A8800027CBF7 /* JavaScript */ = {
@@ -260,7 +279,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF39D15B1DEE19C5003B405C /* View.swift in Sources */,
-				BF39D1521DEE19A5003B405C /* JSView.swift in Sources */,
 				BFF124EE1DEA62730023661D /* QKModule.swift in Sources */,
 				BF39D1531DEE19A5003B405C /* JSRect.swift in Sources */,
 				BFDB002F1DEF66B900E63AD5 /* JavaScriptCore+Magic.swift in Sources */,
@@ -268,18 +286,20 @@
 				BFFEB43B1DEFAADA00846A18 /* JSValueRetainer.swift in Sources */,
 				BFDB4C4A1DF3B2490027CBF7 /* QKSourceMap.swift in Sources */,
 				BF39D1571DEE19A5003B405C /* JSShadow.swift in Sources */,
-				BFFEB4331DEFA11500846A18 /* JSWindow.swift in Sources */,
 				BF39D15C1DEE19C5003B405C /* Button.swift in Sources */,
+				BF4A190E1DF9CAF400750682 /* Events.swift in Sources */,
 				BF39D1541DEE19A5003B405C /* JSPoint.swift in Sources */,
 				BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */,
 				BF39D1511DEE19A5003B405C /* JSAdapter.swift in Sources */,
 				BFFEB4311DEF9FF400846A18 /* QKInstance.swift in Sources */,
+				BF4A190C1DF9CAC700750682 /* JSWindow.swift in Sources */,
 				BFFEB4391DEFA3BD00846A18 /* Window.swift in Sources */,
 				BFDB4C3C1DF3A8CC0027CBF7 /* QKJSUtils.swift in Sources */,
 				BF15132F1DAF135F00C39871 /* Logger.swift in Sources */,
 				BF39D1561DEE19A5003B405C /* JSColor.swift in Sources */,
 				BF39D1551DEE19A5003B405C /* JSSize.swift in Sources */,
 				44B7FDBAA42120FB82D3BB48 /* Swizzler.swift in Sources */,
+				BF4A190B1DF9CAC700750682 /* JSView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

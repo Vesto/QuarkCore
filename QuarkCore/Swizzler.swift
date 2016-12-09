@@ -5,7 +5,7 @@
 
 import Foundation
 
-public protocol Swizzlable {
+public protocol Swizzlable: class {
     static var swizzled: Bool { get set }
     static func swizzle()
 }

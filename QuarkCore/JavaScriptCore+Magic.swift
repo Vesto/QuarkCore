@@ -29,3 +29,13 @@ extension JSContext {
         }
     }
 }
+
+extension JSValue {
+    public func optionalInvoke(_ method: String!, withArguments arguments: [Any]!) -> JSValue? {
+        guard hasProperty(method) else {
+            return nil
+        }
+        
+        return invokeMethod(method, withArguments: arguments)
+    }
+}
