@@ -19,19 +19,19 @@ import JavaScriptCore
  */
 
 @objc
-public protocol View: JSExport, JSValueRetainer {
+public protocol View: JSExport, JSValueRetainer { // TODO: Z index
     /* JavaScript Interop */
-    var jsView: JSValue? { get set } // TODO: Assure weak reference
+    var jsView: JSValue { get set } // This should read or create a view // Should not be used directly from Swift, use JSValue since it's an optional
     
     /* Positioning */
     var jsRect: JSValue { get set }
     
     /* View hierarchy */
-    var jsSubviews: [JSValue] { get }
+    var jsSubviews: [View] { get }
     
-    var jsSuperview: JSValue? { get }
+    var jsSuperview: View? { get }
     
-    func jsAddSubview(_ view: JSValue)
+    func jsAddSubview(_ view: View)
     
     func jsRemoveFromSuperview()
     
@@ -47,7 +47,7 @@ public protocol View: JSExport, JSValueRetainer {
     /* Style */
     var jsBackgroundColor: JSValue { get set } // Color
     var jsAlpha: Double { get set }
-    var jsShadow: JSValue { get set } // Shadow
+    var jsShadow: JSValue? { get set } // Shadow // Should be nil if don't want to render a shadow
     var jsCornerRadius: Double { get set }
     
     /* TODO: Animations like SpriteKit */
@@ -55,14 +55,4 @@ public protocol View: JSExport, JSValueRetainer {
     /* Initiator */
     /// Creates a new view with a JSView.
     init()
-}
-
-// Implement method for `JSValueRetainer`.
-extension View {
-    /// Creates a `JSView` instance.
-    public static func createJSView(instance: QKInstance) -> JSView? {
-        // Should be `createJSValue`, but causes error. 
-        return JSView.jsView(instance: instance, view: Self())
-    }
-
 }

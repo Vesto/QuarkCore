@@ -18,7 +18,6 @@
 		BF39D1571DEE19A5003B405C /* JSShadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D1501DEE19A5003B405C /* JSShadow.swift */; };
 		BF39D15B1DEE19C5003B405C /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D1591DEE19C5003B405C /* View.swift */; };
 		BF39D15C1DEE19C5003B405C /* Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D15A1DEE19C5003B405C /* Button.swift */; };
-		BF4A190B1DF9CAC700750682 /* JSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A19091DF9CAC700750682 /* JSView.swift */; };
 		BF4A190C1DF9CAC700750682 /* JSWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A190A1DF9CAC700750682 /* JSWindow.swift */; };
 		BF4A190E1DF9CAF400750682 /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF4A190D1DF9CAF400750682 /* Events.swift */; };
 		BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF7C36DE1DDD67C500C1DB00 /* QKError.swift */; };
@@ -48,7 +47,6 @@
 		BF39D1501DEE19A5003B405C /* JSShadow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSShadow.swift; sourceTree = "<group>"; };
 		BF39D1591DEE19C5003B405C /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		BF39D15A1DEE19C5003B405C /* Button.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Button.swift; sourceTree = "<group>"; };
-		BF4A19091DF9CAC700750682 /* JSView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSView.swift; sourceTree = "<group>"; };
 		BF4A190A1DF9CAC700750682 /* JSWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSWindow.swift; sourceTree = "<group>"; };
 		BF4A190D1DF9CAF400750682 /* Events.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
 		BF7C36DE1DDD67C500C1DB00 /* QKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKError.swift; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 			isa = PBXGroup;
 			children = (
 				BF4A190D1DF9CAF400750682 /* Events.swift */,
-				BF4A19091DF9CAC700750682 /* JSView.swift */,
 				BF4A190A1DF9CAC700750682 /* JSWindow.swift */,
 			);
 			name = UI;
@@ -299,7 +296,6 @@
 				BF39D1561DEE19A5003B405C /* JSColor.swift in Sources */,
 				BF39D1551DEE19A5003B405C /* JSSize.swift in Sources */,
 				44B7FDBAA42120FB82D3BB48 /* Swizzler.swift in Sources */,
-				BF4A190B1DF9CAC700750682 /* JSView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

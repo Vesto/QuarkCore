@@ -12,7 +12,7 @@ import JavaScriptCore
 @objc
 public protocol JSValueRetainer: class {
     /// Create a `JSValue` to be stored.
-    static func createJSValue(instance: QKInstance) -> JSValue?
+    func createJSValue(instance: QKInstance) -> JSValue?
 }
 
 /// Associated value for storing `jsValue` objects. Has to be global since can't store values in extensions.
@@ -40,7 +40,7 @@ extension JSValueRetainer {
     public func readOrCreateJSValue(instance: QKInstance) -> JSValue {
         if let value = jsValue {
             return value
-        } else if let value = Self.createJSValue(instance: instance) {
+        } else if let value = createJSValue(instance: instance) {
             jsValue = value
             return value
         } else {

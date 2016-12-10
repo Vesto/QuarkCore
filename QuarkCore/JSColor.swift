@@ -35,7 +35,7 @@ public class JSColor: JSAdapter {
     
     public required convenience init?(instance: QKInstance, red: Double, green: Double, blue: Double, alpha: Double) {
         guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [red, green, blue, alpha]) else {
-            print("Could not construct \(JSView.jsClass) with arguments \(red), \(green), \(blue), \(alpha).")
+            print("Could not construct \(JSColor.jsClass) with arguments \(red), \(green), \(blue), \(alpha).")
             return nil
         }
         

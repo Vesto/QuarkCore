@@ -14,5 +14,5 @@ public protocol Window: JSExport {
     var jsWindow: JSWindow! { get }
     
     // The root view
-    var jsRootView: JSValue { get set }
+    var jsRootView: View { get set }
 }
