@@ -30,8 +30,8 @@ public class QKInstance: NSObject {
         return context.objectForKeyedSubscript("quark")
     }
     
-    /// The app delegate.
-    public private(set) var appDelegate: JSValue = JSValue()
+    /// The module delegate to call methods on.
+    public private(set) var moduleDelegate: JSValue = JSValue()
     
     /// The context in which the main script runs in
     public let context: JSContext
@@ -79,7 +79,7 @@ public class QKInstance: NSObject {
         try module.import(intoContext: context)
 
         // Creates and saves an app delegate
-        appDelegate = jsModule.objectForKeyedSubscript(module.info.delegate).construct(withArguments: [])
+        moduleDelegate = jsModule.objectForKeyedSubscript(module.info.delegate).construct(withArguments: [])
 
         // TODO: Need to check that quark was loaded from the bundle before executing
     }
@@ -102,7 +102,7 @@ public class QKInstance: NSObject {
         self.window = window
 
         // Call the appropriate method on the app delegate // TODO: Call rest of init methods on delegate
-        appDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])
+        moduleDelegate.invokeMethod("createInterface", withArguments: [window.jsWindow.value])
 
         // Save the running state
         running = true
