@@ -9,7 +9,7 @@
 import JavaScriptCore
 
 public class JSRect: JSAdapter {
-    public static var jsClass: String = "Rect"
+    public static let jsClass: String = "Rect"
     
     public let value: JSValue
     

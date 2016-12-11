@@ -9,7 +9,7 @@
 import JavaScriptCore
 
 public class JSSize: JSAdapter {
-    public static var jsClass: String = "Size"
+    public static let jsClass: String = "Size"
     
     public let value: JSValue
     

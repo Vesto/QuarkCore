@@ -1,15 +1,15 @@
 //
-//  JSPoint.swift
-//  QuarkExports
+//  JSVector.swift
+//  QuarkCore
 //
-//  Created by Nathan Flurry on 11/25/16.
+//  Created by Nathan Flurry on 12/10/16.
 //  Copyright © 2016 Vesto. All rights reserved.
 //
 
 import JavaScriptCore
 
-public class JSPoint: JSAdapter {
-    public static let jsClass: String = "Point"
+public class JSVector: JSAdapter {
+    public static let jsClass: String = "Vector"
     
     public let value: JSValue
     
@@ -26,7 +26,7 @@ public class JSPoint: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, x: Double, y: Double) {
-        guard let value = JSPoint.classValue(instance: instance).construct(withArguments: [x, y]) else {
+        guard let value = JSVector.classValue(instance: instance).construct(withArguments: [x, y]) else {
             return nil
         }
         

@@ -99,13 +99,13 @@ public class JSScrollEvent: JSAdapter {
     public var time: Double { return value.objectForKeyedSubscript("time").toDouble() }
     public var phase: JSEventPhase? { return JSEventPhase(rawValue: value.objectForKeyedSubscript("phase").toInt32()) }
     public var location: JSPoint? { return JSPoint(value: value.objectForKeyedSubscript("location")) }
-    public var deltaScroll: JSPoint? { return JSPoint(value: value.objectForKeyedSubscript("deltaScroll")) }
+    public var deltaScroll: JSVector? { return JSVector(value: value.objectForKeyedSubscript("deltaScroll")) }
     
     public required init?(value: JSValue) {
         self.value = value
     }
     
-    public required convenience init?(instance: QKInstance, time: Double, phase: JSEventPhase, location: JSPoint, deltaScroll: JSPoint) {
+    public required convenience init?(instance: QKInstance, time: Double, phase: JSEventPhase, location: JSPoint, deltaScroll: JSVector) {
         guard let value = JSScrollEvent.classValue(instance: instance).construct(withArguments: [
             time,
             phase.rawValue,

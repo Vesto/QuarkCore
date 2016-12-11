@@ -9,7 +9,7 @@
 import JavaScriptCore
 
 public class JSColor: JSAdapter {
-    public static var jsClass: String = "Color"
+    public static let jsClass: String = "Color"
     
     public let value: JSValue
     

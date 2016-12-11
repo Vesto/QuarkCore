@@ -9,7 +9,7 @@
 import JavaScriptCore
 
 public class JSShadow: JSAdapter {
-    public static var jsClass: String = "Shadow"
+    public static let jsClass: String = "Shadow"
     
     public let value: JSValue
     
