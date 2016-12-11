@@ -8,6 +8,7 @@
 
 import ObjectiveC
 
+// MARK: Swizzling
 extension NSObject {
     public static func hookTo(original originalSelector: Selector, swizzled swizzledSelector: Selector) {
         let originalMethod = class_getInstanceMethod(self, originalSelector)
