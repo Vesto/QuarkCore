@@ -27,11 +27,11 @@ public protocol View: JSExport, JSValueRetainer { // TODO: Z index
     var jsRect: JSValue { get set }
     
     /* View hierarchy */
-    var jsSubviews: [View] { get }
+    var jsSubviews: [View] { get } // Index 0 = back-most
     
     var jsSuperview: View? { get }
     
-    func jsAddSubview(_ view: View)
+    func jsAddSubview(_ view: View, _ index: Int)
     
     func jsRemoveFromSuperview()
     
