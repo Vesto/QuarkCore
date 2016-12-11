@@ -26,7 +26,7 @@ public class JSSize: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, width: Double, height: Double) {
-        guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [width, height]) else {
+        guard let value = JSSize.classValue(instance: instance).construct(withArguments: [width, height]) else {
             return nil
         }
         

@@ -16,7 +16,7 @@ public protocol JSAdapter {
 }
 
 public extension JSAdapter {
-    public static func viewClass(instance: QKInstance) -> JSValue { // TODO: Change the name of this method
+    public static func classValue(instance: QKInstance) -> JSValue { // TODO: Change the name of this method
         return instance.quarkLibrary.objectForKeyedSubscript(Self.jsClass)
     }
 }

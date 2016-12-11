@@ -30,7 +30,7 @@ public class JSShadow: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, offset: JSPoint, blurRadius: Double, color: JSColor) {
-        guard let value = JSSize.viewClass(instance: instance).construct(withArguments: [offset.value, blurRadius, color.value]) else {
+        guard let value = JSSize.classValue(instance: instance).construct(withArguments: [offset.value, blurRadius, color.value]) else {
             return nil
         }
         

@@ -32,7 +32,7 @@ public class JSInteractionEvent: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, time: Double, type: JSInteractionType, phase: JSEventPhase, location: JSPoint, count: UInt32, pressure: Double) {
-        guard let value = JSInteractionEvent.viewClass(instance: instance).construct(withArguments: [
+        guard let value = JSInteractionEvent.classValue(instance: instance).construct(withArguments: [
             time,
             type.rawValue,
             phase.rawValue,
@@ -74,7 +74,7 @@ public class JSKeyEvent: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, time: Double, phase: JSKeyPhase, isRepeat: Bool, keyCode: UInt32, modifiers: [JSKeyModifier]) {
-        guard let value = JSKeyEvent.viewClass(instance: instance).construct(withArguments: [
+        guard let value = JSKeyEvent.classValue(instance: instance).construct(withArguments: [
             time,
             phase.rawValue,
             isRepeat,
@@ -106,7 +106,7 @@ public class JSScrollEvent: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, time: Double, phase: JSEventPhase, location: JSPoint, deltaScroll: JSPoint) {
-        guard let value = JSScrollEvent.viewClass(instance: instance).construct(withArguments: [
+        guard let value = JSScrollEvent.classValue(instance: instance).construct(withArguments: [
             time,
             phase.rawValue,
             location.value,

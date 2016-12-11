@@ -26,7 +26,7 @@ public class JSPoint: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, x: Double, y: Double) {
-        guard let value = JSPoint.viewClass(instance: instance).construct(withArguments: [x, y]) else {
+        guard let value = JSPoint.classValue(instance: instance).construct(withArguments: [x, y]) else {
             return nil
         }
         

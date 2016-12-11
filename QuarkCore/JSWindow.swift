@@ -19,7 +19,7 @@ public class JSWindow: NSObject, JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, window: Window) {
-        guard let value = JSWindow.viewClass(instance: instance).construct(withArguments: [window]) else {
+        guard let value = JSWindow.classValue(instance: instance).construct(withArguments: [window]) else {
             print("Could not construct \(JSWindow.jsClass) with arguments \(window).")
             return nil
         }

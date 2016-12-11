@@ -26,7 +26,7 @@ public class JSRect: JSAdapter {
     }
     
     public required convenience init?(instance: QKInstance, point: JSPoint, size: JSSize) {
-        guard let value = JSRect.viewClass(instance: instance).construct(withArguments: [point.value, size.value]) else {
+        guard let value = JSRect.classValue(instance: instance).construct(withArguments: [point.value, size.value]) else {
             return nil
         }
         
