@@ -26,4 +26,12 @@ extension NSObject {
             method_exchangeImplementations(originalMethod, swizzledMethod)
         }
     }
+    
+//    public func getAssociated(key: inout String) -> Any? {
+//        return objc_getAssociatedObject(self, key)
+//    }
+//    
+//    public func setAssociated(value: Any, key: inout String, association: objc_AssociationPolicy = .OBJC_ASSOCIATION_RETAIN_NONATOMIC) {
+//        objc_setAssociatedObject(self, key, value, association)
+//    }
 }

@@ -27,7 +27,7 @@ public protocol View: JSExport, JSValueRetainer { // TODO: Z index
     var jsRect: JSValue { get set }
     
     /* View hierarchy */
-    var jsSubviews: [View] { get } // Index 0 = back-most
+    var jsSubviews: [View] { get } // Index 0 = backmost
     
     var jsSuperview: View? { get }
     

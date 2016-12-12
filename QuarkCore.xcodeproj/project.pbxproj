@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		44B7FDBAA42120FB82D3BB48 /* Swizzler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44B7FF1DFDDB7C365BE6482F /* Swizzler.swift */; };
 		BF1512E71DAEF9E000C39871 /* QuarkCore.h in Headers */ = {isa = PBXBuildFile; fileRef = BF1512E51DAEF9E000C39871 /* QuarkCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BF15132F1DAF135F00C39871 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15132E1DAF135F00C39871 /* Logger.swift */; };
+		BF15132F1DAF135F00C39871 /* JSLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF15132E1DAF135F00C39871 /* JSLogger.swift */; };
 		BF39D1511DEE19A5003B405C /* JSAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14A1DEE19A5003B405C /* JSAdapter.swift */; };
 		BF39D1531DEE19A5003B405C /* JSRect.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14C1DEE19A5003B405C /* JSRect.swift */; };
 		BF39D1541DEE19A5003B405C /* JSPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF39D14D1DEE19A5003B405C /* JSPoint.swift */; };
@@ -26,6 +26,7 @@
 		BFDB4C481DF3B1D20027CBF7 /* quark-utils.js in Resources */ = {isa = PBXBuildFile; fileRef = BFDB4C471DF3B1D20027CBF7 /* quark-utils.js */; };
 		BFDB4C4A1DF3B2490027CBF7 /* QKSourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB4C491DF3B2490027CBF7 /* QKSourceMap.swift */; };
 		BFDB4C4E1DF3BE3A0027CBF7 /* quark-utils.js.map in Resources */ = {isa = PBXBuildFile; fileRef = BFDB4C4C1DF3BBB70027CBF7 /* quark-utils.js.map */; };
+		BFDEB5791DFE206A0074EBB0 /* JSModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEB5781DFE206A0074EBB0 /* JSModule.swift */; };
 		BFE4EFB61DFCD1E7009E3BC5 /* JSVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4EFB51DFCD1E7009E3BC5 /* JSVector.swift */; };
 		BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */; };
 		BFF124EE1DEA62730023661D /* QKModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124ED1DEA62730023661D /* QKModule.swift */; };
@@ -39,7 +40,7 @@
 		BF1512E21DAEF9E000C39871 /* QuarkCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = QuarkCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF1512E51DAEF9E000C39871 /* QuarkCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QuarkCore.h; sourceTree = "<group>"; };
 		BF1512E61DAEF9E000C39871 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BF15132E1DAF135F00C39871 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		BF15132E1DAF135F00C39871 /* JSLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSLogger.swift; sourceTree = "<group>"; };
 		BF39D14A1DEE19A5003B405C /* JSAdapter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSAdapter.swift; sourceTree = "<group>"; };
 		BF39D14C1DEE19A5003B405C /* JSRect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSRect.swift; sourceTree = "<group>"; };
 		BF39D14D1DEE19A5003B405C /* JSPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSPoint.swift; sourceTree = "<group>"; };
@@ -56,6 +57,7 @@
 		BFDB4C471DF3B1D20027CBF7 /* quark-utils.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = "quark-utils.js"; path = "../../../quark-utils/quark-utils.js"; sourceTree = "<group>"; };
 		BFDB4C491DF3B2490027CBF7 /* QKSourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKSourceMap.swift; sourceTree = "<group>"; };
 		BFDB4C4C1DF3BBB70027CBF7 /* quark-utils.js.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = "quark-utils.js.map"; path = "../../../quark-utils/quark-utils.js.map"; sourceTree = "<group>"; };
+		BFDEB5781DFE206A0074EBB0 /* JSModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSModule.swift; sourceTree = "<group>"; };
 		BFE4EFB51DFCD1E7009E3BC5 /* JSVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSVector.swift; sourceTree = "<group>"; };
 		BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Swizzle.swift"; sourceTree = "<group>"; };
 		BFF124ED1DEA62730023661D /* QKModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKModule.swift; sourceTree = "<group>"; };
@@ -182,7 +184,8 @@
 		BFFEB4361DEFA20C00846A18 /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				BF15132E1DAF135F00C39871 /* Logger.swift */,
+				BFDEB5781DFE206A0074EBB0 /* JSModule.swift */,
+				BF15132E1DAF135F00C39871 /* JSLogger.swift */,
 			);
 			name = Core;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */,
 				BFE4EFB61DFCD1E7009E3BC5 /* JSVector.swift in Sources */,
 				BFFEB43B1DEFAADA00846A18 /* JSValueRetainer.swift in Sources */,
+				BFDEB5791DFE206A0074EBB0 /* JSModule.swift in Sources */,
 				BFDB4C4A1DF3B2490027CBF7 /* QKSourceMap.swift in Sources */,
 				BF39D1571DEE19A5003B405C /* JSShadow.swift in Sources */,
 				BF39D15C1DEE19C5003B405C /* Button.swift in Sources */,
@@ -296,7 +300,7 @@
 				BF4A190C1DF9CAC700750682 /* JSWindow.swift in Sources */,
 				BFFEB4391DEFA3BD00846A18 /* Window.swift in Sources */,
 				BFDB4C3C1DF3A8CC0027CBF7 /* QKJSUtils.swift in Sources */,
-				BF15132F1DAF135F00C39871 /* Logger.swift in Sources */,
+				BF15132F1DAF135F00C39871 /* JSLogger.swift in Sources */,
 				BF39D1561DEE19A5003B405C /* JSColor.swift in Sources */,
 				BF39D1551DEE19A5003B405C /* JSSize.swift in Sources */,
 				44B7FDBAA42120FB82D3BB48 /* Swizzler.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  Logger.swift
+//  JSLogger.swift
 //  QuarkCore
 //
 //  Created by Nathan Flurry on 10/12/16.
@@ -9,7 +9,7 @@
 import JavaScriptCore
 
 @objc
-public protocol LoggerExport: JSExport {
+public protocol JSLoggerExport: JSExport {
     /**
      Prints text to the console without a line break.
      
@@ -19,7 +19,7 @@ public protocol LoggerExport: JSExport {
 }
 
 @objc
-public class Logger: NSObject, LoggerExport {
+public class JSLogger: NSObject, JSLoggerExport {
     public static func output(_ string: String) {
         // Prints witout a new line break
         Swift.print(string, terminator: "")

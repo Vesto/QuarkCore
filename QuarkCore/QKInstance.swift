@@ -78,8 +78,9 @@ public class QKInstance: NSObject {
         // Import the program into the context
         try module.import(intoContext: context)
 
-        // Creates and saves an app delegate
+        // Creates and saves the module delegate, sets it to JSModule
         moduleDelegate = jsModule.objectForKeyedSubscript(module.info.delegate).construct(withArguments: [])
+        JSModule.delegate = moduleDelegate
 
         // TODO: Need to check that quark was loaded from the bundle before executing
     }
