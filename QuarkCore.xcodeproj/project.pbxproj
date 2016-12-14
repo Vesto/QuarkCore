@@ -27,6 +27,7 @@
 		BFDB4C4A1DF3B2490027CBF7 /* QKSourceMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB4C491DF3B2490027CBF7 /* QKSourceMap.swift */; };
 		BFDB4C4E1DF3BE3A0027CBF7 /* quark-utils.js.map in Resources */ = {isa = PBXBuildFile; fileRef = BFDB4C4C1DF3BBB70027CBF7 /* quark-utils.js.map */; };
 		BFDEB5791DFE206A0074EBB0 /* JSModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEB5781DFE206A0074EBB0 /* JSModule.swift */; };
+		BFDEB57E1DFE46090074EBB0 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDEB57D1DFE46090074EBB0 /* Label.swift */; };
 		BFE4EFB61DFCD1E7009E3BC5 /* JSVector.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE4EFB51DFCD1E7009E3BC5 /* JSVector.swift */; };
 		BFF124EC1DE8EA420023661D /* NSObject+Swizzle.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */; };
 		BFF124EE1DEA62730023661D /* QKModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFF124ED1DEA62730023661D /* QKModule.swift */; };
@@ -58,6 +59,7 @@
 		BFDB4C491DF3B2490027CBF7 /* QKSourceMap.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKSourceMap.swift; sourceTree = "<group>"; };
 		BFDB4C4C1DF3BBB70027CBF7 /* quark-utils.js.map */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; name = "quark-utils.js.map"; path = "../../../quark-utils/quark-utils.js.map"; sourceTree = "<group>"; };
 		BFDEB5781DFE206A0074EBB0 /* JSModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSModule.swift; sourceTree = "<group>"; };
+		BFDEB57D1DFE46090074EBB0 /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
 		BFE4EFB51DFCD1E7009E3BC5 /* JSVector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSVector.swift; sourceTree = "<group>"; };
 		BFF124EB1DE8EA420023661D /* NSObject+Swizzle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSObject+Swizzle.swift"; sourceTree = "<group>"; };
 		BFF124ED1DEA62730023661D /* QKModule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QKModule.swift; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 			children = (
 				BF39D1591DEE19C5003B405C /* View.swift */,
 				BF39D15A1DEE19C5003B405C /* Button.swift */,
+				BFDEB57D1DFE46090074EBB0 /* Label.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				BF4A190E1DF9CAF400750682 /* Events.swift in Sources */,
 				BF39D1541DEE19A5003B405C /* JSPoint.swift in Sources */,
 				BF7C36DF1DDD67C500C1DB00 /* QKError.swift in Sources */,
+				BFDEB57E1DFE46090074EBB0 /* Label.swift in Sources */,
 				BF39D1511DEE19A5003B405C /* JSAdapter.swift in Sources */,
 				BFFEB4311DEF9FF400846A18 /* QKInstance.swift in Sources */,
 				BF4A190C1DF9CAC700750682 /* JSWindow.swift in Sources */,
